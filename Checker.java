@@ -28,7 +28,7 @@ class Checker{
          for(int i = 0; i < classes[j].length; i++){
             try{
                String corrPath = projName + "//out.txt";//change to wherever the correct output is located
-               String stuOutPath = classes[j][i] + "//out.txt";//change to wherever the student output is located
+               String stuOutPath = "Outs\\" + block + "\\" + classes[j][i] + "Out.txt";//change to wherever the student output is located
                File out = new File("Grades\\" + block + classes[j][i] + "grade.txt");
                File in = new File(stuOutPath);
                File correct = new File(corrPath);

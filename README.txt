@@ -2,8 +2,9 @@ AUTOMATED GRADING SYSTEM
 Written by Chris Neville - Deep Run High School
 
 CONTENTS
-I  - Introduction
-II - Description of Directory structure and included files.
+I   - Introduction
+II  - Description of Directory structure and included files.
+III - Naming Conventions
 
 This is a template Directory that contains all the framework required to automate grading.  
 

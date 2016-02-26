@@ -9,15 +9,20 @@ class Runner{
       
       
       //*********************************Define Student Names   Change as needed****************************************
-      String[] class1 = { "","SChiang" , "QDavidson" , "NKamencik" , "FKim" , "BLeimberger", "JLesley" ,
+      String[] block1 = {};
+      String[] block2 = {};
+      String[] block3 = {};
+      String[] block4 = {};
+      String[] block5 = {};
+      String[] block6 = { "","SChiang" , "QDavidson" , "NKamencik" , "FKim" , "BLeimberger", "JLesley" ,
                                  "SMabry" , "LMayer" , "LMcenhimer" , "BMosavello" , "SPendyal" ,
                                  "SSreekesh" , "STaylor" , "DVizdos" , "EXie"};
-      String[] class2 = { "AAnand" , "SChaterjee" , "KDuong" , "MFarag" , "BHallocksolomon" , "CLarkin" ,
+      String[] block7 = { "AAnand" , "SChaterjee" , "KDuong" , "MFarag" , "BHallocksolomon" , "CLarkin" ,
                                  "SLarochelle" , "JLu" , "ERozario" ,"NTracey", "TShezad" , "RVanderzee" , "PWalters",
                                  "QWang" , "CWomack"};
                                  
       //2d array of students.  Each array is a class, each element is a name
-      String[][] classes = {class1 , class2};//change the size of the array to fit how many classes you have
+      String[][] classes = {block1 , block2 , block3 , block4 , block5 , block6 , block7};//change the size of the array to fit how many classes you have
       //****************************************************************************************************************
       
       /*****************************************************************************************************************
@@ -33,16 +38,17 @@ class Runner{
       //****************************************************************************************************************
       
       for(int j = 0; j < classes.length; j++){
+         String block = "Block" + j;
          for(int i = 0; i < classes[j].length; i++){
-            String dir = classes[j][i] + projName;//defines the working directory
+            String dir = "Projects\\" + block + "\\" + classes[j][i] + projName;//defines the working directory
             String[] cmd = {"javac", dir + "\\" + projName + ".java"};//defines the compile command
             try{
                Runtime.getRuntime().exec(cmd).waitFor();//executes the compile command
                
                //Uncomment if you want to redirect project output from StdOut
-               //File out = new File("Outs\\" + students6th[i] + "Out.txt");               
+               //File out = new File("Outs\\" + block + "\\" + classes[j][i] + "Out.txt");               
                
-               ProcessBuilder pb = new ProcessBuilder("java", classes[j][i] + projName, "SampleTestFile.txt");
+               ProcessBuilder pb = new ProcessBuilder("java",dir + classes[j][i] + projName, "SampleTestFile.txt");
                File direct = new File(dir);
                pb.directory(direct);//sets pb's working directory
                
